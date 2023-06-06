@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('./sequelize'); // Reemplaza './sequelize' con la configuración de tu instancia Sequelize
+const sequelize = require('./index'); // Reemplaza './sequelize' con la configuración de tu instancia Sequelize
 
 const User = sequelize.define('User', {
   firstName: {
