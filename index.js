@@ -6,7 +6,7 @@ const User = require('./models/User.model'); // Ruta correcta al modelo User
 const Persona = require('./models/Persona.model');
 const sequelize = new Sequelize('basededatos', 'root', '1234', {
 host: 'localhost',
- dialect: 'mysql'
+dialect: 'mysql'
 });
 
 const bodyParser = require('body-parser');
@@ -35,14 +35,14 @@ app.post('/users', async (req, res) => {
     try {
         console.log( req , 'Este es mi primer body')
       const { firstName, lastName, email } = req.body;
-  
+
       // Crea un nuevo usuario en la base de datos utilizando el modelo User
       const user = await User.create({
         firstName,
         lastName,
         email
       });
-  
+
       res.status(201).json(user);
     } catch (error) {
       console.error(error);
